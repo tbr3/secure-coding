@@ -32,5 +32,7 @@ jobs:
           node-version: 18.8.x
           cache: 'npm'
           cache-dependency-path: ./package-lock.json
+      - name: Install deps.
+        run: npm ci
       - name: Check code format
         run: npm run prettier:check
