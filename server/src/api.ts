@@ -1,9 +1,9 @@
-import express, { Request, Router } from 'express'
+import express from 'express'
 import { addComment, getComments, getPost, getPosts, Comment } from './db'
 
 export function initApp() {
 	const app = express()
-	const router = Router()
+	const router = express.Router()
 
 	router.get('/posts', (request, response) => {
 		getPosts((result) => {

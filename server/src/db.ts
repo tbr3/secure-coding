@@ -1,4 +1,5 @@
-import mysql from 'mysql2'
+import * as mysql from 'mysql2'
+import { QueryError } from 'mysql2'
 export const postsTable = 'posts'
 export const commentsTable = 'comments'
 
@@ -21,13 +22,13 @@ export const db = mysql.createConnection({
 	database: 'demo',
 })
 
-db.connect((error: any) => {
+db.connect((error: QueryError|null) => {
 	if (error) throw error
 	console.log('DB Connected')
 })
 
 export function getPosts(callback: (r: Post[]) => void) {
-	return db.query(`SELECT * FROM ${postsTable}`, (err: any, result: any) => {
+	return db.query(`SELECT * FROM ${postsTable}`, (err: QueryError, result: any) => {
 		if (err) throw err
 		callback(result)
 	})
