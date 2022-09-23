@@ -11,3 +11,8 @@ Use this snippet in the comment form to demonstrate SQL injection:
 ```html
 http://localhost:3000/api/posts/20" or ""="'
 ```
+
+Use this snippet in the comment form to demonstrate DoS:
+```html
+" AND
+```

@@ -4,16 +4,19 @@
         "commonjs": true,
         "es2021": true
     },
-    "extends": "eslint:recommended",
+    "plugins": [
+        "security-node"
+    ],
+    "extends": ["eslint:recommended", "plugin:security-node/recommended"],
     "overrides": [
     ],
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "rules": {
         "indent": [
-            "error",
-            "space"
+            "error"
         ],
         "linebreak-style": [
             "error",
