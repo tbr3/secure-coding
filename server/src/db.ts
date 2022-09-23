@@ -22,7 +22,7 @@ export const db = mysql.createConnection({
 	database: 'demo',
 })
 
-db.connect((error: QueryError|null) => {
+db.connect((error: QueryError | null) => {
 	if (error) throw error
 	console.log('DB Connected')
 })

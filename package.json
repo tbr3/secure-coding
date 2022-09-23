@@ -4,7 +4,7 @@
 	"description": "This project is intended for demo and code-long in the Secure Coding course. It aims to demonstrate the practical parts of SQL injection, XSS as well as how to guard against these types of vectors.",
 	"main": "index.js",
 	"scripts": {
-		"prettier:check": "prettier --check .",
+		"prettier:check": "prettier --config ./.prettierrc --check .",
 		"prettier:format": "prettier --write ."
 	},
 	"repository": {
