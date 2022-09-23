@@ -1,21 +1,21 @@
 .comment-form {
-    border: 1px solid #f1f1f1;
-    padding: 1rem;
+	border: 1px solid #f1f1f1;
+	padding: 1rem;
 }
 
 .comment-form label {
-    display: block;
-    margin: 1rem 0 0 0;
+	display: block;
+	margin: 1rem 0 0 0;
 }
 
 .comment-form input {
-    width: 100%;
+	width: 100%;
 }
 
 .comment-form textarea {
-    width: 100%;
+	width: 100%;
 }
 
 .comment-form button {
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
