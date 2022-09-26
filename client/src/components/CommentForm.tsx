@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useContext, useState } from 'react'
 import { CommentsContext } from '../contexts/CommentsContext'
-import { Comment } from '../hooks/useGetComments'
+import { IComment } from '../hooks/useGetComments'
 import './CommentForm.css'
 
 enum CommentFormSubmissionState {
@@ -10,7 +10,7 @@ enum CommentFormSubmissionState {
 	ERROR = 3,
 }
 
-type CommentFormState = Omit<Comment, 'id' | 'postId'> & {
+type CommentFormState = Omit<IComment, 'id' | 'postId'> & {
 	submissionState: CommentFormSubmissionState
 	postId: string | null
 }
@@ -36,7 +36,7 @@ const CommentForm: FC = (props) => {
 		(e: React.FormEvent<HTMLFormElement>) => {
 			e.preventDefault() // Prevent submit from html form.
 			setState((old) => ({ ...old, submissionState: CommentFormSubmissionState.SUBMITTING }))
-			const comment: Omit<Comment, 'id'> = {
+			const comment: Omit<IComment, 'id'> = {
 				postId: state.postId as string,
 				name: state.name,
 				content: state.content,

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Comment as IComment } from '../hooks/useGetComments'
+import { IComment } from '../hooks/useGetComments'
 import './Comment.css'
 
 const Comment: FC<IComment> = (props) => {

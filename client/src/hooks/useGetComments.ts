@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export type Comment = {
+export type IComment = {
 	id: number
 	postId: string
 	name: string
@@ -8,7 +8,7 @@ export type Comment = {
 }
 
 export default function useGetComments(postId: string | undefined) {
-	const [comments, setComments] = useState<Comment[]>([])
+	const [comments, setComments] = useState<IComment[]>([])
 
 	useEffect(() => {
 		if (!postId) return

@@ -1,8 +1,8 @@
 import { createContext, PropsWithChildren, useCallback, useEffect, useState } from 'react'
-import { Comment } from '../hooks/useGetComments'
+import { IComment } from '../hooks/useGetComments'
 
 interface CommentsContextInterface {
-	comments: Comment[]
+	comments: IComment[]
 	postId: string | null
 	refresh: () => void
 }
