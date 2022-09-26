@@ -18,7 +18,7 @@
 		"typescript.tsdk": "client/node_modules/typescript/lib",
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"prettier.configPath": "../prettierrc",
+		"prettier.configPath": "/workspace/.prettierrc",
 		"editor.codeActionsOnSave": {
 			"source.organizeImports": true
 		},
