@@ -15,6 +15,9 @@ export type Comment = {
 	content: string
 }
 
+/**
+ * DB Configuration.
+ */
 export const db = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
