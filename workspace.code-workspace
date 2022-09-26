@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "./",
+			"name": "root",
+			"exclude": "./client"
+		},
+		{
+			"path": "./server",
+			"name": "server"
+		},
+		{
+			"path": "./client",
+			"name": "client"
+		}
+	],
+	"settings": {
+		"typescript.tsdk": "client/node_modules/typescript/lib",
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"prettier.configPath": "/workspace/.prettierrc",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+		"[typescriptreact]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[json]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[jsonc]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		}
+	}
+}

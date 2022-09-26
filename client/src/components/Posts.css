@@ -1,0 +1,12 @@
+.posts {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0 -2rem;
+}
+
+.posts > .post {
+	box-sizing: border-box;
+	padding: 0 2rem;
+	width: 25%;
+}
