@@ -11,7 +11,7 @@ describe('db', () => {
 	describe('getComments', () => {
 		it('queries db with supplied postId', () => {
 			// Given
-			const postId = '123'
+			const postId = 123
 			const mockCallback = jest.fn()
 			const dbQueryMock = jest.fn()
 			const dbQuerySpy = jest.spyOn(db, 'query').mockImplementation(dbQueryMock)
