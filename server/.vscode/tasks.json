@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev:start",
+			"problemMatcher": [],
+			"label": "npm: dev:start",
+			"detail": "nodemon ./index.ts"
+		},
+		{
+			"type": "npm",
+			"script": "db:seed",
+			"problemMatcher": [],
+			"label": "npm: db:seed",
+			"detail": "tsc ./seed.ts --noEmit"
+		}
+	]
+}
