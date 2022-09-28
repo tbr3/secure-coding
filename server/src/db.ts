@@ -38,7 +38,6 @@ export function getPosts(callback: (r: Post[]) => void) {
 }
 
 export function getPost(id: number, callback: (r: Post) => void) {
-
 	const query = `SELECT * FROM ${postsTable} WHERE id="${id}"`
 	return db.query(query, (err: any, result: any) => {
 		if (err) throw err
