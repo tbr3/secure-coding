@@ -8,7 +8,7 @@
     "dev:test": "jest --watch",
     "lint": "eslint ./index.ts",
     "dev:start": "nodemon ./src/index.ts",
-    "db:seed": "tsc ./seed.ts --noEmit"
+    "db:seed": "tsc ./src/seed.ts --noEmit"
   },
   "author": "",
   "license": "ISC",
