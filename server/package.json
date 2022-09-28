@@ -7,7 +7,7 @@
     "test": "jest",
     "dev:test": "jest --watch",
     "lint": "eslint ./index.ts",
-    "dev:start": "nodemon ./src/index.ts",
+    "dev:start": "nodemon -r dotenv/config ./src/index.ts",
     "db:seed": "tsc ./src/seed.ts --noEmit"
   },
   "author": "",
