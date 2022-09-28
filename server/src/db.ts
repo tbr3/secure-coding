@@ -37,7 +37,8 @@ export function getPosts(callback: (r: Post[]) => void) {
 	})
 }
 
-export function getPost(id: string, callback: (r: Post) => void) {
+export function getPost(id: number, callback: (r: Post) => void) {
+
 	const query = `SELECT * FROM ${postsTable} WHERE id="${id}"`
 	return db.query(query, (err: any, result: any) => {
 		if (err) throw err
@@ -45,7 +46,7 @@ export function getPost(id: string, callback: (r: Post) => void) {
 	})
 }
 
-export function getComments(postId: string, callback: (r: Comment[]) => void) {
+export function getComments(postId: number, callback: (r: Comment[]) => void) {
 	return db.query(`SELECT * FROM ${commentsTable} WHERE postId = ${postId}`, (err: any, result: any) => {
 		if (err) throw err
 		callback(result)

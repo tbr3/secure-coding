@@ -1,5 +1,15 @@
 import express from 'express'
-import { addComment, getComments, getPost, getPosts, Comment } from './db'
+import { addComment, Comment, getComments, getPost, getPosts } from './db'
+
+function sanitizeIntegerInput(input:string):number {
+	const requestInt = parseInt(input)
+
+		if (!Number.isInteger(requestInt)) {
+			throw new Error('Not an integer.')
+		}
+	
+	return requestInt
+}
 
 export function initApp() {
 	const app = express()
@@ -12,18 +22,37 @@ export function initApp() {
 	})
 
 	router.get('/posts/:id', (request, response) => {
-		getPost(request.params.id, (result) => {
-			response.send(result)
-		})
+
+		const requestInt = parseInt(request.params.id)
+
+		if (Number.isInteger(requestInt)) {
+			getPost(requestInt, (result) => {
+				response.send(result)
+			})
+			
+		} else {
+			response.sendStatus(400)
+		}
+
+		
 	})
 
 	router.get('/posts/:id/comments', (request, response) => {
-		getComments(request.params.id, (result) => {
-			response.send(result)
-		})
+
+		try {
+			const id = sanitizeIntegerInput(request.params.id)
+
+			getComments(id, (result) => {
+				response.send(result)
+			})
+		} catch (error) {
+			response.sendStatus(400)
+		}
 	})
 
 	router.post('/posts/:id/comments', (request, response) => {
+
+
 		const body = request.body as Omit<Comment, 'postId'>
 		addComment(request.params.id, body.content, body.name, (result) => {
 			response.send(result)

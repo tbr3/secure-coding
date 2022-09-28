@@ -3,7 +3,7 @@ import { IComment } from '../hooks/useGetComments'
 import Comment from './Comment'
 
 describe('Comment', () => {
-	it('renders supplied html', () => {
+	it('does not render supplied html', () => {
 		// Given
 		const elementId = 'bar'
 		const elementContent = 'Test'
@@ -18,6 +18,6 @@ describe('Comment', () => {
 		render(<Comment {...comment} />)
 
 		// Then
-		expect(screen.getAllByText(elementContent, { selector: `#${elementId}` })).toHaveLength(1)
+		expect(screen.queryByText(elementContent, { selector: `#${elementId}` })).toBeNull()
 	})
 })
